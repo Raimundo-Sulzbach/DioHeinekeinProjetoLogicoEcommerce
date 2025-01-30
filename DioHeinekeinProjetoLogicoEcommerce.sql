@@ -28,7 +28,6 @@
 -- produtos por vendedor: cadastro com os produtos por vendedor terceiro
 -- relação de produto pedido: cadastro com os produtos comprados por pedido de cliente
 -- tabela preço frete: tabela com os preços dos fretes de entrega dos produtos comprados
--- timestamps:
 -- transportador: cadastro com as transportadoras que entregam as vendas do site
 -- vendedor: cadastro com os vendedores terceiros do site
 
