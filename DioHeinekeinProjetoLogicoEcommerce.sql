@@ -13,23 +13,30 @@
 -- 
 -- cliente: cadastro de clientes
 -- endereços de entrega: endereços de entrega para os clientes
--- estoque: estoques dos produtos em venda
--- fornecedor: cadastro de fornecedores
--- locais de estoque: cadastro com as localizações dos estoques
--- meios de pagamento: maios de pagamento dos clientes
 -- nacionalidade: cadastro de nacionalidades dos clientes
+-- meios de pagamento: maios de pagamento dos clientes
 -- operador financeiro: cadastro com os operadores financeiros dos diversos meios de pagamento dos clientes
 -- operadorbandeiras: bandeiras de cartões de crédito e débito referentes a alguns meios de pagamento
+-- 
+-- transportador: cadastro com as transportadoras que entregam as vendas do site
+-- praças: cadastro com as praças de entrega das transportadoras
+-- tabela preço frete: tabela com os preços dos fretes de entrega dos produtos comprados
+-- 
+-- estoque: estoques dos produtos em venda
+-- locais de estoque: cadastro com as localizações dos estoques
+-- 
+-- produto: cadastro com os produtos disponíveis para venda
+-- 
+-- fornecedor: cadastro de fornecedores
+-- produtos por fornecedor: cadastro com os produtos por fornecedor
+-- 
+-- vendedor: cadastro com os vendedores terceiros do site
+-- produtos por vendedor: cadastro com os produtos por vendedor terceiro
+-- 
 -- pedido: cadastro de pedidos dos clientes
 -- (*) Atenção: o controle sobre a exclusão de pedidos tem de ser sobre o campo STATUS, através de Regras de Negócio. 
--- praças: cadastro com as praças de entrega das transportadoras
--- produto: cadastro com os produtos disponíveis para venda
--- produtos por fornecedor: cadastro com os produtos por fornecedor
--- produtos por vendedor: cadastro com os produtos por vendedor terceiro
 -- relação de produto pedido: cadastro com os produtos comprados por pedido de cliente
--- tabela preço frete: tabela com os preços dos fretes de entrega dos produtos comprados
--- transportador: cadastro com as transportadoras que entregam as vendas do site
--- vendedor: cadastro com os vendedores terceiros do site
+-- 
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -324,6 +331,12 @@ CREATE TABLE IF NOT EXISTS `dio_ecommercedb`.`Produto` (
   `Valor` DECIMAL(15,5) NOT NULL DEFAULT 0.00001 COMMENT 'Valor unitário de venda do produto.',
   `Prazo_para_devolucao` INT NOT NULL DEFAULT 1 COMMENT 'Prazo para devolução em dias (atenção: existem mínimos legais a serem seguidos para essa definição, que terão de ser considerados).',
   `Categoria` VARCHAR(100) NOT NULL COMMENT 'Categoria de identificação do produto no site.',
+  `Foto1` BLOB NOT NULL COMMENT 'Foto 1 do produto',
+  `Foto2` BLOB NULL COMMENT 'Foto 2 do produto.',
+  `Foto3` BLOB NULL COMMENT 'Foto 3 do produto.',
+  `Foto4` BLOB NULL COMMENT 'Foto 4 do produto.',
+  `Video1` LONGBLOB NULL COMMENT 'Video do produto.',
+
   PRIMARY KEY (`idProduto`),
   CHECK (`Valor` > 0),
   CHECK (`Prazo_para_devolucao` > 0)
