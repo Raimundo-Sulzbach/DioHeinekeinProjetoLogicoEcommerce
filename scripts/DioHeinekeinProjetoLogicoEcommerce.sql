@@ -1,4 +1,5 @@
-rojeto Lógico de Banco de Dados
+-- Desafio - Dio X Heinekein X MySQL Workbench
+-- Criando e implementando um um Projeto Lógico de Banco de Dados
 -- Autor: Raimundo Sulzbach
 --
 -- (*) Atenção! O script Apaga e reinicia o banco de dados dio_ecomercedb.
